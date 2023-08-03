@@ -5,7 +5,13 @@ class Reverse
     // Complete the function
     // str: input string
     public static String reverseWord(String str)
-    {
+    {   /*byte[] newarr=str.getBytes();
+          byte[] result= new byte[newarr.length];
+          for(int i=0;i<newarr.length;i++){
+              result[i]=newarr[newarr.length-i-1];
+          }
+          return (new String(result));
+        */
         // Reverse the string str
         String rev="";
         int n= str.length();
