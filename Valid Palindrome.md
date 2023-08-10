@@ -10,9 +10,9 @@ class Solution {
         Matcher matcher=pattern.matcher(s);
         String k= matcher.replaceAll("");
         String g=k.toLowerCase();
-        System.out.print(g);
         int len=g.length();
-        if (len%2==0){
+
+        /*if (len%2==0){
             for (int i=0;i<len/2;i++){
                 if(g.charAt(i)!=(g.charAt(len-1-i))){
                     return false;
@@ -29,9 +29,27 @@ class Solution {
                 
                 }
             }
+            
             return true;
             
+        }*/
+
+
+
+
+       // Approach 2
+        int i=0;
+        int j=len-1;
+        while (i<j){
+           if (g.charAt(i)!=g.charAt(j)){
+               return false;
+           }
+           else{
+               i++;
+               j--;
+           }
         }
+        return true;
     }
 }
 ```
