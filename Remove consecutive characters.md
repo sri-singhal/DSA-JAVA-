@@ -2,7 +2,7 @@
 ```
 class Solution{
     public String removeConsecutiveCharacter(String S){
-        int k=S.length();
+        /*int k=S.length();
         int i=1;
         while(i<k){
             if (S.charAt(i)==S.charAt(i-1)){
@@ -13,7 +13,29 @@ class Solution{
                 i++;
             }
         }
-        return S;
+        return S;*/
+          
+          
+          //approach2 sliding window
+          
+          int j=0;
+          int i=0;
+          String news="";
+          while(j<S.length()){
+              
+              if (S.charAt(j)==S.charAt(i)){
+                  j++;
+              }
+              else if (S.charAt(j)!=S.charAt(i) || j==S.length()-1){
+                  news+=S.charAt(i);
+                  i=j;
+                  j++;
+              }
+              
+          }
+          news+=S.charAt(j-1);
+          return news;
+          
     }
 }
 ```
