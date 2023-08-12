@@ -1,6 +1,6 @@
 # longest common prefix
 ```
-class Solution {
+/*class Solution {
     public String longestCommonPrefix(String[] strs) {
         String pre="";
         int l=strs.length;
@@ -24,6 +24,41 @@ class Solution {
         pre+=strs[0].charAt(j - 1);
     }
      return pre;
+ }
+}
+
+
+*/
+
+//efficient Approach
+
+class Solution {
+    public String longestCommonPrefix(String[] strs) {
+        int n = strs.length;
+       
+       String result = strs[0];
+       
+       
+       for(int i = 1; i < n; i++){
+            
+            while(strs[i].indexOf(result) != 0){
+               
+               
+                result = result.substring(0, result.length()-1);
+               
+                
+                if(result.isEmpty()){
+                    return "";
+                }
+            }
+        }
+        return result;
+
+ }
+}
+
+```
+![image](https://github.com/sri-singhal/DSA-JAVA-/assets/98937798/6ed8a542-7662-4e50-94bc-6abc429eda21)
    
 
  }
